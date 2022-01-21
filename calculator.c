@@ -2,37 +2,48 @@
 
 int main(){
 
-    int num1, num2;
+    float num1, num2;
     int character;
-    printf("Please, enter first number: ");
-    scanf("%d", &num1);
+    bool check = false;
 
-    printf("Please, enter second number: ");
-    scanf("%d", &num2);
+    while(1){
+        if(check){
+            break;
+        }
+        printf("-----CALCULATOR-----\n");
 
-    printf("What do you want:\n 1. +\n 2. -\n 3. *\n 4. /\n 5. %\n");
-    scanf("%d", &character);
+        printf("Enter the first number: ");
+        scanf("%f", &num1);
 
-    switch(character){
-    case 1:
-        printf("%d + %d = %d", num1, num2, num1 + num2);
-        break;
-    case 2:
-        printf("%d - %d = %d", num1, num2, num1 - num2);
-        break;
-    case 3:
-        printf("%d * %d = %d", num1, num2, num1 * num2);
-        break;
-    case 4:
-        printf("%d / %d = %d", num1, num2, num1 / num2);
-        break;
-    case 5:
-        printf("%d %% %d = %d", num1, num2, num1 % num2);
-        break;
-    default:
-        printf("Please enter correct number!");
-        break;
+        printf("Enter the second number: ");
+        scanf("%f", &num2);
+        
+        printf("0. Exit\n1. +\n2. -\n3. *\n4. /\nPlease enter the number: ");
+        scanf("%d", &character);
+
+        switch(character){
+            case 0:
+                check = true;
+                break;
+            case 1:
+                printf("%.2f + %.2f = %.2f\n", num1, num2, num1 + num2);
+                break;
+            case 2:
+                printf("%.2f - %.2f = %.2f\n", num1, num2, num1 - num2);
+                break;
+            case 3:
+                printf("%.2f * %.2f = %.2f\n", num1, num2, num1 * num2);
+                break;
+            case 4:
+                printf("%.2f / %.2f = %.2f\n", num1, num2, num1 / num2);
+                break;
+            case 5:
+                printf("%d %% %d = %d", num1, num2, num1 % num2);
+                break;
+            default:
+                printf("Please enter correct number!\n");
+                break;
+        }
     }
-
     return 0;
 }
